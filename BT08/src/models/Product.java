@@ -44,24 +44,6 @@ public class Product implements Comparable<Product> {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Product other = (Product) obj;
-        if (!Objects.equals(this.productId, other.productId)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public int compareTo(Product o) {
         return Double.compare(this.productPrice, o.productPrice);
     }
