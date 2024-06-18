@@ -52,6 +52,24 @@ public class Order {
         this.listProduct.add(product);
     }
 
+        @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Order other = (Order) obj;
+        if (!Objects.equals(this.orderId, other.orderId)) {
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
         return "Order ID: " + orderId + ", Date Created: " + dateCreated + ", Customer: " + customer.toString() + ", Products: " + listProduct.toString();
